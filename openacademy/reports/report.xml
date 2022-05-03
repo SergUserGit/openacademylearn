@@ -1,0 +1,12 @@
+<odoo>
+
+    <report
+    id="report_session_model"
+    string="Session"
+    model="session.model"
+    report_type="qweb-pdf"
+    name="openacademy.report_session"
+    file="openacademy.report_session"
+    />
+
+</odoo>

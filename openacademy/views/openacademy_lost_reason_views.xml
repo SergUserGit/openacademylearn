@@ -1,0 +1,57 @@
+<odoo>
+
+  <record model="ir.ui.view" id="openacademy_course_view_form">
+          <field name="name">openacademy.course.form</field>
+          <field name="model">openacademy.course</field>
+          <field name="arch" type="xml">
+             <form string="My form">
+                <sheet>
+                    <group>  
+                      <field name="name"/>
+                      <field name="myuser"/>
+                    </group>
+                    <notebook>
+                       <page string="Description">
+                           <group>
+                               <field name="description"/>
+                           </group>
+                       </page>
+                       <page string="Sessions">
+                           <field name="session_ids"/>
+                       </page>
+                    </notebook>
+                </sheet>
+             </form>
+          </field>
+  </record>
+
+  <record model="ir.ui.view" id="openacademy_course_view_tree">
+          <field name="name">openacademy.course.tree</field>
+          <field name="model">openacademy.course</field>
+          <field name="arch" type="xml">
+             <tree string="My tree">
+                 <field name="name"/>
+                 <field name="description"/>
+                 <field name="myuser"/>
+             </tree>
+          </field>
+  </record>
+!--
+-->
+  <record model="ir.ui.view" id="openacademy_course_search">
+      <field name="name">openacademy.course.search</field>
+      <field name="model">openacademy.course</field>
+      <field name="arch" type="xml">
+          <search string="Test search">
+               <field name="name"/>
+               <field name="description"/>
+               <separator/>
+               <filter name="myuser" string="My user filter" domain="[('myuser','=',uid)]"/>
+               <group string="My user" expand="1">
+                   <filter name="myuser_group" string="Myuser" context="{'group_by':'myuser'}"/>
+               </group>
+          </search>
+      </field>
+  </record>
+
+</odoo>

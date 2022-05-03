@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="session_model_view_extend_form">
+          <field name="name">session model view extend form</field>
+          <field name="model">session.model</field>
+          <field name="inherit_id" ref="session_model_view_form"/>
+          <field name="arch" type="xml">
+               <field name="part_ids" position="after">
+                   <field name="instructor_new"/>
+               </field>
+          </field>
+      </record>
+    </data>
+</odoo>
+<!--
+-->

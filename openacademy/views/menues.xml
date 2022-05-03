@@ -1,0 +1,20 @@
+<odoo>
+  <data> 
+  <menuitem name="Kurses" id="test_menu_root">
+    <menuitem name="Kurses" id="test_first_level_menu">
+       <menuitem id="test_model_menu_action" action="openacademy_course_action"/>
+    </menuitem>
+    <menuitem name="Session" id="session_level_menu">
+       <menuitem id="session_menu_action" action="session_model_action"/>
+
+
+         <menuitem name="Session wizard" id="session_level_menu_wizard">
+            <menuitem id="session_menu_action_wizard" action="action_cancel_openacademy"/>
+         </menuitem>
+
+
+    </menuitem>
+
+  </menuitem> 
+  </data>
+</odoo>

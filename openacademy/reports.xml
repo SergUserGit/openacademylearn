@@ -1,0 +1,38 @@
+<!--
+<odoo>
+
+    <data>
+
+    <record id="report_session" model="ir.actions.report">
+        <field name="name">Session report</field>
+        <field name="model">session.model</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">report_model</field>
+        <field name="report_file">report_model</field>
+        <field name="binding_model_id" ref="model_session_model"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="report_model">
+        <t t-call="web.html_container">
+          <t t-foreach="docs" t-as="doc">
+              <t t-call="web.external_layout">
+                  <div class="page">
+                      <h2 t-field="doc.name"/>
+                      <p>From <span t-field="doc.datestart"/> to <span t-field="doc.dateend"/></p>
+                      <h3>Attendees:</h3>
+                      <ul>
+                          <t t-foreach="doc.part_ids" t-as="part">
+                              <li><span t-field="part.name"/></li>
+                          </t>
+                      </ul>
+                  </div>
+              </t>
+          </t>
+        </t>
+    </template>
+
+    </data>
+</odoo>
+-->

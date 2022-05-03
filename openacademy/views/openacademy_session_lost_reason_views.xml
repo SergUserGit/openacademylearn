@@ -1,0 +1,151 @@
+
+<odoo>
+
+<!--
+  <record model="ir.ui.view" id="openacademy_openacademy_view_form">
+          <field name="name">openacademy.openacademy.form</field>
+          <field name="model">openacademy.openacademy</field>
+          <field name="arch" type="xml">
+             <form string="My form">
+                <sheet>
+                    <group>  
+                      <field name="name"/>
+                    </group>
+                    <notebook>
+                       <page string="Description">
+                           <group>
+                               <field name="description"/>
+                           </group>
+                       </page>
+                    </notebook>
+                </sheet>
+             </form>
+          </field>
+  </record>
+-->
+
+   <record model="ir.ui.view" id="session_model_calendar">
+          <field name="name">session.model.calendar</field>
+          <field name="model">session.model</field>
+          <field name="arch" type="xml">
+             <calendar string="Session Calendar" date_start="datestart" color="course_id" mode="month">
+                 <field name="name"/>
+                 <field name="course_id"/>
+             </calendar>
+          </field>
+  </record>
+
+  <record model="ir.ui.view" id="session_model_graph">
+          <field name="name">session.model.graph</field>
+          <field name="model">session.model</field>
+          <field name="arch" type="xml">
+             <graph string="Session Graph" type="bar">
+                  <field name="course_id"/>
+                  <field name="numberseats" type="measure"/>
+             </graph>
+          </field>
+  </record>
+
+    <record model="ir.ui.view" id="session_model_kanban">
+          <field name="name">session.model.kanban</field>
+          <field name="model">session.model</field>
+          <field name="arch" type="xml">
+             <kanban default_group_by="course_id">
+                 <templates>
+                     <t t-name="kanban-box">
+                         <div class="oe_kanban_global_click o_session_model_kanban">
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title"> <field name="display_name"/></strong>
+                                <div class="o_kanban_tags_section"/>
+                                <ul>
+                                    <li>Session : <field name="name"/> </li>
+                                </ul>
+                            </div>
+                         </div>
+                     </t>
+                 </templates>
+             </kanban>
+          </field>
+   </record>
+
+   <record model="ir.ui.view" id="session_model_view_form">
+          <field name="name">session.model.form</field>
+          <field name="model">session.model</field>
+          <field name="arch" type="xml">
+             <form string="My form">
+                 <sheet>
+                     <group>
+                         <field name="name"/>
+                         <field name="datestart"/>
+                         <field name="dateend"/>
+                         <field name="duration"/>
+                         <field name="numberseats"/>
+                         <field name="instructor_id"/>
+                         <field name="course_id"/>
+                         <field name="part_ids" widget="many2many_tags"/>
+                         <field name="perc_empl_places" widget="progressbar"/>
+                     </group>
+                 </sheet>
+             </form>
+          </field>
+  </record>
+
+  <record model="ir.ui.view" id="session_model_view_tree">
+          <field name="name">session.model.tree</field>
+          <field name="model">session.model</field>
+          <field name="arch" type="xml">
+             <tree string="My tree" decoration-info="duration&lt;5" decoration-danger="duration&gt;15">
+                 <field name="name"/>
+                 <field name="datestart"/>
+                 <field name="dateend"/>
+                 <field name="duration"/>
+                 <field name="numberseats"/>
+                 <field name="instructor_id"/>
+                 <field name="course_id"/>
+                 <field name="perc_empl_places"/>
+             </tree>
+          </field>
+  </record>
+
+<!--
+  #<record model="ir.ui.view" id="session_model_new">
+
+          <field name="name">session.model.form.inherit.test</field>
+          <field name="model">session.model</field>
+          <field name="inherit_id" ref="inherited_session_model_view_form"/>
+          <field name="arch" type="xml">
+              <xpath position="after">
+                  <field name="instructor_new"/>
+              </xpath>
+          </field>
+
+          <field name="inherit_id" ref="inherited.session_model_view_form"/>
+
+          <field name="name">session.model.form.inherit.test</field>
+          <field name="model">session.model</field>->
+          <field name="inherit_id" ref="inherited.session_model_view_form"/>
+          <field name="arch" type="xml">
+              <xpath position="after">
+                  <field name="instructor"/>
+              </xpath>
+          </field>
+
+
+  </record>
+
+
+
+  <record model="ir.ui.view" id="openacademy_openacademy_search">
+      <field name="name">openacademy.openacademy.search</field>
+      <field name="model">openacademy.openacademy</field>
+      <field name="arch" type="xml">
+          <search string="Test search">
+               <field name="name"/>
+               <field name="description"/>
+          </search>
+      </field>
+  </record>
+-->
+
+</odoo>
+
